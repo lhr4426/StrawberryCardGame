@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject endTxt;
 
     public int cardCount = 0;
+
+    public bool isGameDone;
     float time = 0.0f;
 
     AudioSource audioSource;
@@ -39,7 +41,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        if(!isGameDone)time += Time.deltaTime;
         timeTxt.text = time.ToString("N2");
         if(time >= 30.0f)
         {
@@ -64,7 +66,8 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
-                GameEnd();
+                isGameDone = true;
+                Invoke("GameEnd",0.8f);
             }
         }
         else
