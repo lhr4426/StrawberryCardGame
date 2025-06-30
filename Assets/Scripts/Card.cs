@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 
-    public Animator anim;
+    //public Animator anim;
 
     public SpriteRenderer frontImage;
 
@@ -37,15 +38,17 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         audioSource.PlayOneShot(clip);
-        anim.SetBool("isOpen", true);
-        front.SetActive(true);
-        back.SetActive(false);     
-        
+        //anim.SetBool("isOpen", true);
+        //front.SetActive(true);
+        //back.SetActive(false);
+
         // firstCard == null => firstCard에 정보 넘기기
         // else => secondCard에 정보 넘기기
         // matched 부르기
 
-        if(GameManager.instance.firstCard ==  null)
+        ReverseCard(true);
+
+        if (GameManager.instance.firstCard ==  null)
         {
             GameManager.instance.firstCard = this;
         }
@@ -55,6 +58,12 @@ public class Card : MonoBehaviour
             GameManager.instance.Matched();
         }
     }
+
+    public void ReverseCard(bool isOpen)
+    {
+        transform.DORotate(isOpen? new Vector3(0, 180, 0) : Vector3.zero, 0.2f);
+    }
+
 
     public void DestroyCard()
     {
@@ -73,8 +82,9 @@ public class Card : MonoBehaviour
 
     void CloseCardInvoke()
     {
-        anim.SetBool("isOpen", false);
-        front.SetActive(false);
-        back.SetActive(true);
+        //anim.SetBool("isOpen", false);
+        //front.SetActive(false);
+        //back.SetActive(true);
+        ReverseCard(false);
     }
 }
