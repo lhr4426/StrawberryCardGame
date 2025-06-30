@@ -49,7 +49,7 @@ public class RewardedButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("StartScene");
         }
     }
 
