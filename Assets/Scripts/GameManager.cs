@@ -1,4 +1,5 @@
 using DG.Tweening;
+using SpriteGlow;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,9 +58,9 @@ public class GameManager : MonoBehaviour
         Invoke("OnInteractable", 1f);
 
         float clearTime = 30f - time;
-        clearTxt.text = $"{clearTime:N2}ÃÊ";
+        clearTxt.text = $"{clearTime:N2}ï¿½ï¿½";
 
-        // ¸ðµåº°·Î ´Ù¸¥ Å° »ç¿ë
+        // ï¿½ï¿½åº°ï¿½ï¿½ ï¿½Ù¸ï¿½ Å° ï¿½ï¿½ï¿½
         string bestKey = isHardMode ? "BestTime_Hidden" : "BestTime_Normal";
         float bestTime = PlayerPrefs.GetFloat(bestKey, float.MaxValue);
 
@@ -68,11 +69,11 @@ public class GameManager : MonoBehaviour
             bestTime = clearTime;
             PlayerPrefs.SetFloat(bestKey, bestTime);
             PlayerPrefs.Save();
-            bestTxt.text = $"{bestTime:N2}ÃÊ";
+            bestTxt.text = $"{bestTime:N2}ï¿½ï¿½";
         }
         else
         {
-            bestTxt.text = $"{bestTime:N2}ÃÊ";
+            bestTxt.text = $"{bestTime:N2}ï¿½ï¿½";
         }
     }
 
@@ -81,6 +82,8 @@ public class GameManager : MonoBehaviour
         if (firstCard.idx == secondCard.idx)
         {
             AudioManager.instance.MatchSound();
+
+            StartCoroutine(CardEffect(firstCard.clowCtrl, secondCard.clowCtrl));
             firstCard.DestroyCard();
             secondCard.DestroyCard();
             cardCount -= 2;
@@ -107,5 +110,20 @@ public class GameManager : MonoBehaviour
     {
         endPanel.GetComponent<Button>().interactable = true;
         Time.timeScale = 0f;
+    }
+    IEnumerator CardEffect(SpriteGlowEffect first,SpriteGlowEffect second)
+    {
+        first.OutlineWidth = 1;
+        second.OutlineWidth = 1;
+        first.GlowBrightness = 4;
+        second.GlowBrightness = 4;
+
+        do
+        {
+            first.GlowBrightness -= Time.deltaTime*10;
+            second.GlowBrightness -= Time.deltaTime*10;
+            yield return new WaitForEndOfFrame();
+        } while (first.GlowBrightness >1f);
+
     }
 }

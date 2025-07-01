@@ -2,12 +2,13 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SpriteGlow;
 
 public class  Card : MonoBehaviour
 {
     public GameObject front;
     public GameObject back;
-
+    public SpriteGlowEffect clowCtrl;
     //public Animator anim;
 
     public SpriteRenderer frontImage;
@@ -65,7 +66,7 @@ public class  Card : MonoBehaviour
 
     public void DestroyCard()
     {
-        Invoke("DestroyCardInvoke", 0.5f);
+        Invoke("DestroyCardInvoke", 0.9f);
     }
 
     void DestroyCardInvoke()

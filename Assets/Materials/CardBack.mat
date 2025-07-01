@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CardMat
+  m_Name: CardBack
   m_Shader: {fileID: 4800000, guid: 467241f8112dad546be28933a0bacfee, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

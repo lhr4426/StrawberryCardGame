@@ -27,6 +27,7 @@ public class Hidden : Card
 
     public override void OpenCard()
     {
+        AudioManager.instance.FlipSound();
 
         ReverseCard(true);
 
