@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
 
     public bool isGameDone;
-    float time = 0.0f;
+    float time = 30.0f;
 
 
     private void Awake()
@@ -39,9 +39,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isGameDone)time += Time.deltaTime;
+        if(!isGameDone)time -= Time.deltaTime;
         timeTxt.text = time.ToString("N2");
-        if(time >= 30.0f)
+        if(time <= 0.0f)
         {
             GameEnd();
         }
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         endTxt.SetActive(true);
     }
 
-    public void Matched()
+    public void Matched(bool isHardMod = false) 
     {
         if (firstCard.idx == secondCard.idx)
         {
@@ -70,6 +70,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            if (!isHardMod)
+            {
+                time -= 1.0f;
+            }
             firstCard.CloseCard();
             secondCard.CloseCard();
         }
