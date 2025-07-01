@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
     public Card secondCard;
 
     public Text timeTxt;
-    public GameObject endTxt;
+    public GameObject endPanel;
+
+    public Text clearTxt;
+    public Text bestTxt;
 
     public int cardCount = 0;
 
@@ -47,11 +50,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameEnd()
+    public void GameEnd(bool isHardMode = false)
     {
-        Time.timeScale = 0f;
         DOTween.Clear(true);
-        endTxt.SetActive(true);
+        endPanel.SetActive(true);
+        Invoke("OnInteractable", 1f);
+
+        float clearTime = 30f - time;
+        clearTxt.text = $"{clearTime:N2}초";
+
+        // 모드별로 다른 키 사용
+        string bestKey = isHardMode ? "BestTime_Hidden" : "BestTime_Normal";
+        float bestTime = PlayerPrefs.GetFloat(bestKey, float.MaxValue);
+
+        if (clearTime < bestTime)
+        {
+            bestTime = clearTime;
+            PlayerPrefs.SetFloat(bestKey, bestTime);
+            PlayerPrefs.Save();
+            bestTxt.text = $"{bestTime:N2}초";
+        }
+        else
+        {
+            bestTxt.text = $"{bestTime:N2}초";
+        }
     }
 
     public void Matched(bool isHardMode = false) 
@@ -79,5 +101,11 @@ public class GameManager : MonoBehaviour
         }
         firstCard = null;
         secondCard = null;
+    }
+
+    public void OnInteractable()
+    {
+        endPanel.GetComponent<Button>().interactable = true;
+        Time.timeScale = 0f;
     }
 }
