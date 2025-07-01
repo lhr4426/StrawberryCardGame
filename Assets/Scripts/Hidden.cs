@@ -43,6 +43,6 @@ public class Hidden : Card
 
     public override void CloseCard()
     {
-        base.CloseCard();
+        Invoke("CloseCardInvoke", 0.3f);
     }
 }
