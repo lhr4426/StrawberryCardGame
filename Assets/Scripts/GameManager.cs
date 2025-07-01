@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         endTxt.SetActive(true);
     }
 
-    public void Matched(bool isHardMod = false) 
+    public void Matched(bool isHardMode = false) 
     {
         if (firstCard.idx == secondCard.idx)
         {
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (!isHardMod)
+            if (isHardMode)
             {
                 time -= 1.0f;
             }
