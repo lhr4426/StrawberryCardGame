@@ -1,4 +1,5 @@
 using DG.Tweening;
+using SpriteGlow;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,6 +60,8 @@ public class GameManager : MonoBehaviour
         if (firstCard.idx == secondCard.idx)
         {
             AudioManager.instance.MatchSound();
+
+            StartCoroutine(CardEffect(firstCard.clowCtrl, secondCard.clowCtrl));
             firstCard.DestroyCard();
             secondCard.DestroyCard();
             cardCount -= 2;
@@ -79,5 +82,22 @@ public class GameManager : MonoBehaviour
         }
         firstCard = null;
         secondCard = null;
+    }
+    IEnumerator CardEffect(SpriteGlowEffect first,SpriteGlowEffect second)
+    {
+        first.OutlineWidth = 1;
+        second.OutlineWidth = 1;
+        first.GlowBrightness = 4;
+        second.GlowBrightness = 4;
+
+        do
+        {
+            first.GlowBrightness -= Time.deltaTime*10;
+            second.GlowBrightness -= Time.deltaTime*10;
+            yield return new WaitForEndOfFrame();
+        } while (first.GlowBrightness >1f);
+
+
+        
     }
 }
