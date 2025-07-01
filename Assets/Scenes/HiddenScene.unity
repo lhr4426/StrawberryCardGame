@@ -464,7 +464,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c659f1cb346b2c44a4ca8b9e82a3029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 440b00e3cdc30724987511f2087f6579, type: 3}
+  bgmAudioSource: {fileID: 0}
+  sfxAudioSource: {fileID: 0}
+  bgmClip: {fileID: 0}
+  matchClip: {fileID: 0}
+  flipClip: {fileID: 0}
+  bgmVolume: 0
+  sfxVolume: 0
+  isBgmMuted: 0
+  isSfxMuted: 0
 --- !u!1 &500843779
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +748,6 @@ MonoBehaviour:
   endTxt: {fileID: 37947609}
   cardCount: 0
   isGameDone: 0
-  clip: {fileID: 8300000, guid: 58652d4b374e389469947361421ff3b4, type: 3}
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
