@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         bgmAudioSource.clip = this.bgmClip;
+        bgmAudioSource.volume = bgmVolume;
         bgmAudioSource.Play();
     }
 

@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 59090050}
   - component: {fileID: 59090049}
   - component: {fileID: 59090048}
+  - component: {fileID: 59090051}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -399,10 +400,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 27337583}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 59090051}
+        m_TargetAssemblyTypeName: MainButtons, Assembly-CSharp
+        m_MethodName: OnSettingCloseButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -449,6 +450,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59090046}
   m_CullTransparentMesh: 1
+--- !u!114 &59090051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59090046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingPanel: {fileID: 27337583}
+  hiddenButton: {fileID: 1729196017}
 --- !u!1 &100577675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,6 +1262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingPanel: {fileID: 0}
+  hiddenButton: {fileID: 0}
 --- !u!1 &562953247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingPanel: {fileID: 0}
+  hiddenButton: {fileID: 0}
 --- !u!1 &1653367510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,6 +3118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingPanel: {fileID: 0}
+  hiddenButton: {fileID: 0}
 --- !u!1 &1813793637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,6 +3208,7 @@ GameObject:
   - component: {fileID: 1900516988}
   - component: {fileID: 1900516987}
   - component: {fileID: 1900516986}
+  - component: {fileID: 1900516990}
   m_Layer: 5
   m_Name: SettingBtn
   m_TagString: Untagged
@@ -3273,17 +3295,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 27337583}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1900516990}
+        m_TargetAssemblyTypeName: MainButtons, Assembly-CSharp
+        m_MethodName: OnSettingButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1900516988
 MonoBehaviour:
@@ -3323,6 +3345,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900516984}
   m_CullTransparentMesh: 1
+--- !u!114 &1900516990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900516984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingPanel: {fileID: 27337583}
+  hiddenButton: {fileID: 1729196017}
 --- !u!1 &1906554425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,6 +3369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1906554426}
   - component: {fileID: 1906554427}
+  - component: {fileID: 1906554428}
   m_Layer: 5
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -3413,6 +3450,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1906554428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906554425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f1502e466d43f488612692d044d92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBGM: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
