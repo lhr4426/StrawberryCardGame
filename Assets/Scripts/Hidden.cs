@@ -21,7 +21,7 @@ public class Hidden : Card
     {
         idx = number;
         Debug.Log(number);
-        frontImage.sprite = Resources.Load<Sprite>($"normal{idx}");
+        frontImage.sprite = Resources.Load<Sprite>($"hidden{idx}");
         
     }
 
