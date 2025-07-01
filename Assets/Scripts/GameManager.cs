@@ -7,8 +7,19 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance;
+
+    public static GameManager GetInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameObject("GameManager").AddComponent<GameManager>();
+            }
+            return instance;
+        }
+    }
 
     public Card firstCard;
     public Card secondCard;
@@ -24,6 +35,8 @@ public class GameManager : MonoBehaviour
     public bool isGameDone;
     float time = 30.0f;
 
+    public bool isHardMode;
+
 
     private void Awake()
     {
@@ -31,6 +44,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+
     }
 
     // Start is called before the first frame update
@@ -51,16 +65,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameEnd(bool isHardMode = false)
+    public void GameEnd()
     {
         DOTween.Clear(true);
         endPanel.SetActive(true);
         Invoke("OnInteractable", 1f);
 
         float clearTime = 30f - time;
-        clearTxt.text = $"{clearTime:N2}��";
+        clearTxt.text = $"{clearTime:N2}초";
 
-        // ��庰�� �ٸ� Ű ���
+
         string bestKey = isHardMode ? "BestTime_Hidden" : "BestTime_Normal";
         float bestTime = PlayerPrefs.GetFloat(bestKey, float.MaxValue);
 
@@ -69,11 +83,11 @@ public class GameManager : MonoBehaviour
             bestTime = clearTime;
             PlayerPrefs.SetFloat(bestKey, bestTime);
             PlayerPrefs.Save();
-            bestTxt.text = $"{bestTime:N2}��";
+            bestTxt.text = $"{bestTime:N2}초";
         }
         else
         {
-            bestTxt.text = $"{bestTime:N2}��";
+            bestTxt.text = $"{bestTime:N2}초";
         }
     }
 
