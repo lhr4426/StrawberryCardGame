@@ -208,8 +208,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Card, Assembly-CSharp
+      - m_Target: {fileID: 7859326812459765640}
+        m_TargetAssemblyTypeName: Hidden, Assembly-CSharp
         m_MethodName: OpenCard
         m_Mode: 1
         m_Arguments:
@@ -472,10 +472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   front: {fileID: 659757845180277373}
   back: {fileID: 5365116855321664580}
-  frontImage: {fileID: 0}
+  frontImage: {fileID: 255074129619845655}
   idx: 0
-  audioSource: {fileID: 0}
-  clip: {fileID: 0}
 --- !u!1 &8036913047516059067
 GameObject:
   m_ObjectHideFlags: 0

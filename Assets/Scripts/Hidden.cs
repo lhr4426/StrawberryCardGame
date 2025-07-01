@@ -27,7 +27,6 @@ public class Hidden : Card
 
     public override void OpenCard()
     {
-        audioSource.PlayOneShot(clip);
 
         ReverseCard(true);
 

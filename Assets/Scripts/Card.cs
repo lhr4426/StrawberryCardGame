@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public class  Card : MonoBehaviour
 {
     public GameObject front;
     public GameObject back;
@@ -27,13 +27,13 @@ public class Card : MonoBehaviour
         
     }
 
-    public void Setting(int number)
+    public virtual void Setting(int number)
     {
         idx = number;
         frontImage.sprite = Resources.Load<Sprite>($"rtan{idx}");
     }
 
-    public void OpenCard()
+    public virtual void OpenCard()
     {
         AudioManager.instance.FlipSound();
         //anim.SetBool("isOpen", true);
@@ -57,7 +57,7 @@ public class Card : MonoBehaviour
         }
     }
 
-    public void ReverseCard(bool isOpen)
+    public virtual void ReverseCard(bool isOpen)
     {
         transform.DORotate(isOpen? new Vector3(0, 180, 0) : Vector3.zero, 0.2f);
     }
@@ -73,7 +73,7 @@ public class Card : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void CloseCard()
+    public virtual void CloseCard()
     {
         Invoke("CloseCardInvoke", 0.5f);
     }
