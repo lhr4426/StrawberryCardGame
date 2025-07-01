@@ -68,13 +68,18 @@ public class GameManager : MonoBehaviour
     public void GameEnd()
     {
         DOTween.Clear(true);
-        endPanel.SetActive(true);
         Invoke("OnInteractable", 1f);
 
         float clearTime = 30f - time;
-        clearTxt.text = $"{clearTime:N2}초";
-
-
+        if(time < 0.0f)
+        {
+            clearTxt.text = "실패!";
+        }
+        else
+        {
+            clearTxt.text = $"{clearTime:N2}초";
+        }
+            
         string bestKey = isHardMode ? "BestTime_Hidden" : "BestTime_Normal";
         float bestTime = PlayerPrefs.GetFloat(bestKey, float.MaxValue);
 
@@ -89,6 +94,8 @@ public class GameManager : MonoBehaviour
         {
             bestTxt.text = $"{bestTime:N2}초";
         }
+
+        endPanel.SetActive(true);
     }
 
     public void Matched(bool isHardMode = false) 
