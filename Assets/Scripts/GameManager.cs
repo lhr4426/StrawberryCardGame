@@ -109,12 +109,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-<<<<<<< Updated upstream
-            if (isHardMode)
-=======
             
-            if (!isHardMod)
->>>>>>> Stashed changes
+            if (isHardMode)
             {
                 time -= 1.0f;
             }
@@ -124,15 +120,12 @@ public class GameManager : MonoBehaviour
         firstCard = null;
         secondCard = null;
     }
-<<<<<<< Updated upstream
 
     public void OnInteractable()
     {
         endPanel.GetComponent<Button>().interactable = true;
         Time.timeScale = 0f;
     }
-=======
->>>>>>> Stashed changes
     IEnumerator CardEffect(SpriteGlowEffect first,SpriteGlowEffect second)
     {
         first.OutlineWidth = 1;
@@ -147,10 +140,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         } while (first.GlowBrightness >1f);
 
-<<<<<<< Updated upstream
-=======
 
-        
->>>>>>> Stashed changes
     }
 }
