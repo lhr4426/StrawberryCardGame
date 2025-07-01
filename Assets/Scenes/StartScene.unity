@@ -1842,7 +1842,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1612960365}
   - component: {fileID: 1612960367}
-  - component: {fileID: 1612960366}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1862,20 +1861,75 @@ Transform:
   m_LocalPosition: {x: 1.065726, y: 2.432022, z: -0.058866683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1653032580}
+  - {fileID: 409953755}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1612960366
-AudioSource:
+--- !u!114 &1612960367
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612960364}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c659f1cb346b2c44a4ca8b9e82a3029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmAudioSource: {fileID: 1653032581}
+  sfxAudioSource: {fileID: 409953756}
+  bgmClip: {fileID: 8300000, guid: 440b00e3cdc30724987511f2087f6579, type: 3}
+  matchClip: {fileID: 8300000, guid: 58652d4b374e389469947361421ff3b4, type: 3}
+  flipClip: {fileID: 8300000, guid: 3640b972750c8a34b954222d5ee3ea96, type: 3}
+  bgmVolume: 0
+  sfxVolume: 0
+  isBgmMuted: 0
+  isSfxMuted: 0
+--- !u!1 &1653032579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653032580}
+  - component: {fileID: 1653032581}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653032580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653032579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1612960365}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1653032581
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653032579}
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 440b00e3cdc30724987511f2087f6579, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
