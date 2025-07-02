@@ -9,6 +9,7 @@ public class MainButtons : MonoBehaviour
 
     public GameObject settingPanel;
     public Button hiddenButton;
+    public GameObject checkPanel;
 
     private void Start()
     {
@@ -29,6 +30,23 @@ public class MainButtons : MonoBehaviour
         GameManager.GetInstance.isHardMode = true;
 
     }
+    public void OnStartHorrorButton()
+    {
+        AudioManager.instance.bgmAudioSource.Stop();
+        AudioManager.instance.bgmAudioSource.mute = false;
+        AudioManager.instance.sfxAudioSource.mute = false;
+        AudioManager.instance.bgmAudioSource.volume = 1f;
+        AudioManager.instance.sfxAudioSource.volume = 1f;
+        AudioManager.instance.bgmAudioSource.PlayOneShot(AudioManager.instance.horrorTitleBgm);
+        SceneManager.LoadScene("StartHorrorScene");
+        Time.timeScale = 1f;
+    }
+    public void OnHorrorPlayButton()
+    {
+        SceneManager.LoadScene("FakeMainScene");
+        Time.timeScale = 1f;
+        GameManager.GetInstance.isHardMode = true;
+    }
 
     public void OnSettingButton()
     {
@@ -40,6 +58,14 @@ public class MainButtons : MonoBehaviour
     {
         settingPanel.SetActive(false);
         hiddenButton.interactable = true;
+    }
+    public void OnCheckButton()
+    {
+        checkPanel.SetActive(true);
+    }
+    public void OnChecClosekButton()
+    {
+        checkPanel.SetActive(false);
     }
 
     public void OnExitButton()

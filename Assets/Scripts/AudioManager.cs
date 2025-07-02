@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip bgmClip;
     public AudioClip matchClip;
     public AudioClip flipClip;
+    public AudioClip horrorTitleBgm;
 
     public float bgmVolume;
     public float sfxVolume;
