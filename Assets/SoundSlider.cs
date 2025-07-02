@@ -4,10 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundSlider : MonoBehaviour
+public class SoundSlider : SettingOrder
 {
     [SerializeField]bool isBGM = false;
-    private void Start()
+    public override void Init(System.Action<bool> action) 
     {
         Slider slider = GetComponent<Slider>();
         if (isBGM)
@@ -22,5 +22,10 @@ public class SoundSlider : MonoBehaviour
             AudioManager.instance.SfxSliderChanged(slider.value);
             slider.onValueChanged.AddListener((sValue) => { AudioManager.instance.SfxSliderChanged(sValue); });
         }
+        action.Invoke(true);
     }
+}
+public class SettingOrder : MonoBehaviour
+{
+    public virtual void Init(System.Action<bool> action) { }
 }
