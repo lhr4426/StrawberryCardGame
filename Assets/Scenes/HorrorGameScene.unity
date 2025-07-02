@@ -349,6 +349,10 @@ MonoBehaviour:
   matchClip: {fileID: 0}
   flipClip: {fileID: 0}
   horrorTitleBgm: {fileID: 0}
+  normalClick: {fileID: 0}
+  settingToggleClip: {fileID: 0}
+  horrorGameBgm: {fileID: 0}
+  horrorClick: {fileID: 0}
   bgmVolume: 0
   sfxVolume: 0
   isBgmMuted: 0
@@ -1015,6 +1019,14 @@ PrefabInstance:
     - target: {fileID: 5949586885034456721, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
       propertyPath: m_LocalScale.y
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494981271899656657, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494981271899656657, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7712740760894933824, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
       propertyPath: m_IsActive
