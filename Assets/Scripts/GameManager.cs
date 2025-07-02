@@ -27,6 +27,31 @@ public class GameManager : MonoBehaviour
     public Text timeTxt;
     public GameObject endPanel;
 
+    public Queue<Text> looseQueue = new Queue<Text>();
+    public Text timeLoosePrefab;
+    public Text GetLooseText
+    {
+        get 
+        {
+            if (looseQueue.Count > 0)
+            {
+                Text text = looseQueue.Dequeue();
+                return text;
+            }
+            if (timeLoosePrefab == null) 
+            { 
+                timeLoosePrefab = GameObject.Instantiate(timeTxt.gameObject).GetComponent<Text>();
+                timeLoosePrefab.gameObject.SetActive(false);
+                timeLoosePrefab.transform.parent = timeTxt.transform.parent;
+            }
+            Text t = GameObject.Instantiate(timeLoosePrefab);
+            t.transform.parent = timeTxt.transform.parent;
+
+            return t;
+        }
+    }
+
+
     public Text clearTxt;
     public Text bestTxt;
 
@@ -64,6 +89,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CallLoose()
+    {
+        Text looseT = GetLooseText;
+        looseT.gameObject.SetActive(true);
+        looseT.text = "-1";
+        looseT.fontSize = 50;
+        looseT.color = Color.red;
+
+        looseT.transform.position = timeTxt.transform.position + (Vector3.right * 150f);
+        looseT.transform.DOLocalMoveY(looseT.transform.position.y+100, 3f).OnComplete(() => { looseT.gameObject.SetActive(false); looseQueue.Enqueue(looseT); });
+    }
     public void GameEnd()
     {
         DOTween.Clear(true);
@@ -118,6 +154,7 @@ public class GameManager : MonoBehaviour
             
             if (isHardMode)
             {
+                CallLoose();
                 time -= 1.0f;
             }
             firstCard.CloseCard();
