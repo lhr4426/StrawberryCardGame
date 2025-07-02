@@ -13,6 +13,8 @@ public class VfxOnOff : SettingOrder
         if (TryGetComponent<Button>(out Button t))
         {
             t.onClick.AddListener(() => { PlayerPrefs.SetInt("vfxOnOFF", PlayerPrefs.GetInt("vfxOnOFF") ==0  ? 1 : 0); });
+            //t.isOn = PlayerPrefs.GetInt("vfxOnOFF") == 1 ? true : false;
+
         }
 
 
