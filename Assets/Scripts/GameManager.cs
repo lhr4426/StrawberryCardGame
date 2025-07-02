@@ -160,6 +160,7 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
+                AudioManager.instance.NormalClearSound();
                 isGameDone = true;
                 Invoke("GameEnd",0.8f);
             }
