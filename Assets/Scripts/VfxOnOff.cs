@@ -8,8 +8,7 @@ public class VfxOnOff : SettingOrder
 {
     public override void Init(Action<bool> action)
     {
-        if (!PlayerPrefs.HasKey("vfxOnOff")) PlayerPrefs.SetInt("vfxOnOFF", 1);
-
+        PlayerPrefs.SetInt("vfxOnOFF", 1);
         if (TryGetComponent<Button>(out Button t))
         {
             t.onClick.AddListener(() => { PlayerPrefs.SetInt("vfxOnOFF", PlayerPrefs.GetInt("vfxOnOFF") ==0  ? 1 : 0); });
