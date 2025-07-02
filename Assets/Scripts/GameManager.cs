@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-
     }
 
     // Start is called before the first frame update
@@ -81,7 +80,7 @@ public class GameManager : MonoBehaviour
         }
             
         string bestKey = isHardMode ? "BestTime_Hidden" : "BestTime_Normal";
-        float bestTime = PlayerPrefs.GetFloat(bestKey, float.MaxValue);
+        float bestTime = PlayerPrefs.GetFloat(bestKey, 30f);
 
         if (clearTime < bestTime)
         {

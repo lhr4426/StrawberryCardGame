@@ -9,6 +9,12 @@ public class MainButtons : MonoBehaviour
 
     public GameObject settingPanel;
     public Button hiddenButton;
+
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void OnNormalPlayButton()
     {
         SceneManager.LoadScene("MainScene");
