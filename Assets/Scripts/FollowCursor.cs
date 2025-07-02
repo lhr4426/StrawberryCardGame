@@ -108,4 +108,5 @@ public class FollowCursor : MonoBehaviour
         } while (curr <5f);
         Destroy(transform.parent.gameObject);
     }
+
 }
