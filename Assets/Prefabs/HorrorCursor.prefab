@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 5b95a81611ae84246a1324be32837f17, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a61a97f97c794144f928523b36d449a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 7494981271899656657}
   - component: {fileID: 8177672082161929414}
   - component: {fileID: 1062185230892842377}
+  - component: {fileID: 3145356416527721347}
   m_Layer: 0
   m_Name: FollowCursor
   m_TagString: Untagged
@@ -166,7 +167,7 @@ Transform:
   m_GameObject: {fileID: 8441499268366251115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12.45, y: -8.87, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -213,7 +214,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d64dc43570201c243a924f4e56d9bb39, type: 3}
+  m_Sprite: {fileID: 1758660194, guid: 5593dd2b5999f604a9430841a6f17ff6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,5 +239,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   gameOverDistance: 0
+  shakeDistance: 0
+  vignetter: {fileID: 0}
+  originalCameraPosition: {x: 0, y: 0, z: 0}
   jumpScareImage: {fileID: 7712740760894933824}
-  jumpScareDuration: 2
+--- !u!95 &3145356416527721347
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441499268366251115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6cbae1c1ed967504c946e51b6742e28a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

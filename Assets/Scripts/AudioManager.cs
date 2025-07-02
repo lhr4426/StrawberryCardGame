@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class AudioManager : MonoBehaviour
     public float sfxVolume;
     public bool isBgmMuted;
     public bool isSfxMuted;
+
+    public Toggle bgmToggle;
+    public Toggle sfxToggle;
 
     private void Awake()
     {
@@ -39,7 +43,11 @@ public class AudioManager : MonoBehaviour
     {
         bgmAudioSource.clip = this.bgmClip;
         bgmAudioSource.volume = bgmVolume;
+        sfxAudioSource.volume = sfxVolume;
         bgmAudioSource.mute = isBgmMuted;
+        sfxAudioSource.mute = isSfxMuted;
+        bgmToggle.isOn = isBgmMuted;
+        sfxToggle.isOn = isSfxMuted;
         bgmAudioSource.Play();
         bgmAudioSource.loop = true;
     }

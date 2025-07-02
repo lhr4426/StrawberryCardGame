@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &246184638
 Transform:
   m_ObjectHideFlags: 0
@@ -353,6 +353,8 @@ MonoBehaviour:
   sfxVolume: 0
   isBgmMuted: 0
   isSfxMuted: 0
+  bgmToggle: {fileID: 0}
+  sfxToggle: {fileID: 0}
 --- !u!1 &254486603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1008,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5949586885034456721, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949586885034456721, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712740760894933824, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1499,7 +1513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ee7d1d518ea640991662ad30a0a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horrorScript: {fileID: 0}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   timeTxt:

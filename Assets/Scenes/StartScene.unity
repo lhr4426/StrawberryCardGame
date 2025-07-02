@@ -224,7 +224,7 @@ MonoBehaviour:
   settings:
   - {fileID: 1662070418}
   - {fileID: 1906554428}
-  - {fileID: 0}
+  - {fileID: 955313355}
 --- !u!1 &29782845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1303,8 @@ MonoBehaviour:
   sfxVolume: 1
   isBgmMuted: 0
   isSfxMuted: 0
+  bgmToggle: {fileID: 268442995}
+  sfxToggle: {fileID: 1667673801}
 --- !u!4 &467762425
 Transform:
   m_ObjectHideFlags: 0
@@ -2259,6 +2261,7 @@ GameObject:
   - component: {fileID: 955313353}
   - component: {fileID: 955313352}
   - component: {fileID: 955313351}
+  - component: {fileID: 955313355}
   m_Layer: 5
   m_Name: YesBtn
   m_TagString: Untagged
@@ -2407,6 +2410,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955313349}
   m_CullTransparentMesh: 1
+--- !u!114 &955313355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955313349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18d1775fb736eb41b9d7fa90b8346d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &995610809
 GameObject:
   m_ObjectHideFlags: 0
