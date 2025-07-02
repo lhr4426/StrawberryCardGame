@@ -33,6 +33,7 @@ public class MainButtons : MonoBehaviour
         AudioManager.instance.sfxAudioSource.mute = false;
         AudioManager.instance.bgmAudioSource.volume = 1f;
         AudioManager.instance.sfxAudioSource.volume = 1f;
+        AudioManager.instance.bgmAudioSource.loop = true;
         AudioManager.instance.bgmAudioSource.PlayOneShot(AudioManager.instance.horrorTitleBgm);
         SceneManager.LoadScene("StartHorrorScene");
     }

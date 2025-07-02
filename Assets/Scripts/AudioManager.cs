@@ -39,7 +39,9 @@ public class AudioManager : MonoBehaviour
     {
         bgmAudioSource.clip = this.bgmClip;
         bgmAudioSource.volume = bgmVolume;
+        bgmAudioSource.mute = isBgmMuted;
         bgmAudioSource.Play();
+        bgmAudioSource.loop = true;
     }
 
     private void Update()
