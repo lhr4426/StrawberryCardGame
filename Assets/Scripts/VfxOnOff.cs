@@ -10,10 +10,9 @@ public class VfxOnOff : SettingOrder
     {
         if (!PlayerPrefs.HasKey("vfxOnOff")) PlayerPrefs.SetInt("vfxOnOFF", 1);
 
-        if (TryGetComponent<Toggle>(out Toggle t))
+        if (TryGetComponent<Button>(out Button t))
         {
-            t.onValueChanged.AddListener((b) => { PlayerPrefs.SetInt("vfxOnOFF", b ? 1 : 0); });
-            t.isOn = PlayerPrefs.GetInt("vfxOnOFF") == 1 ? true : false;
+            t.onClick.AddListener(() => { PlayerPrefs.SetInt("vfxOnOFF", PlayerPrefs.GetInt("vfxOnOFF") ==0  ? 1 : 0); });
         }
 
 
