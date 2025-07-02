@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartHorrorScene.unity
     guid: bc2d865a3d835874e843f6ffc1aebd97
   - enabled: 1
-    path: Assets/Scenes/FakeMainScene.unity
+    path: Assets/Scenes/HorrorGameScene.unity
     guid: b80233096551d6d4d88747b8058927ad
+  - enabled: 1
+    path: Assets/Scenes/FakeMainScene.unity
+    guid: 5a518d480e983844b8dacf3dd9f3539a
   m_configObjects: {}

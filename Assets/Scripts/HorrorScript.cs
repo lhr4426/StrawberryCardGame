@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class HorrorScript : MonoBehaviour
+public class HorrorScript : MonoBehaviour 
 {
     public Card firstCard;
     public Card secondCard;
@@ -28,6 +28,7 @@ public class HorrorScript : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
+        GameManager.instance.horrorScript = this;
     }
 
     // Update is called once per frame

@@ -3,6 +3,7 @@ using SpriteGlow;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
+
+    public HorrorScript horrorScript;
 
     public Card firstCard;
     public Card secondCard;
@@ -193,5 +196,10 @@ public class GameManager : MonoBehaviour
             second.OutlineWidth = 0;
 
         }
+    }
+
+    public void LoadHorrorScene()
+    {
+        SceneManager.LoadScene("HorrorGameScene");
     }
 }

@@ -19,15 +19,11 @@ public class MainButtons : MonoBehaviour
     public void OnNormalPlayButton()
     {
         SceneManager.LoadScene("MainScene");
-        Time.timeScale = 1f;
-        GameManager.GetInstance.isHardMode = false;
     }
 
     public void OnHiddenPlayButton()
     {
         SceneManager.LoadScene("HiddenScene");
-        Time.timeScale = 1f;
-        GameManager.GetInstance.isHardMode = true;
 
     }
     public void OnStartHorrorButton()
@@ -39,13 +35,10 @@ public class MainButtons : MonoBehaviour
         AudioManager.instance.sfxAudioSource.volume = 1f;
         AudioManager.instance.bgmAudioSource.PlayOneShot(AudioManager.instance.horrorTitleBgm);
         SceneManager.LoadScene("StartHorrorScene");
-        Time.timeScale = 1f;
     }
     public void OnHorrorPlayButton()
     {
         SceneManager.LoadScene("FakeMainScene");
-        Time.timeScale = 1f;
-        GameManager.GetInstance.isHardMode = true;
     }
 
     public void OnSettingButton()

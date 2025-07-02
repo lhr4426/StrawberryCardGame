@@ -13,5 +13,7 @@ public class VfxOnOff : MonoBehaviour
         Toggle tg = GetComponent<Toggle>();
         tg.onValueChanged.AddListener((b) => { PlayerPrefs.SetInt("vfxOnOFF", b? 1 : 0); });
         tg.isOn = PlayerPrefs.GetInt("vfxOnOFF") == 1 ? true : false;
+
     }
+
 }
