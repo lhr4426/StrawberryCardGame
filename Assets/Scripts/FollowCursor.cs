@@ -33,6 +33,12 @@ public class FollowCursor : MonoBehaviour
             // 놀래키기
             jumpScareImage.SetActive(true);
             Destroy(this.gameObject); // FollowCursor 스크립트 제거
+            Invoke("OnExitButton", 1f);
         }
+    }
+
+    public void OnExitButton()
+    {
+        Application.Quit();
     }
 }
