@@ -26,12 +26,6 @@ public class VignetteCtrl : MonoBehaviour
         curr = vignette.intensity.value;
         res = (Screen.width+Screen.height)/2f;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        MouseTraceVignette(testTR.position);
-    }
     /// <summary>
     /// worldPos기준으로 마우스를 추격하는 함수
     /// </summary>
