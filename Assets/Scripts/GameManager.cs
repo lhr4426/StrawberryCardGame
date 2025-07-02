@@ -22,12 +22,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public HorrorScript horrorScript;
-
     public Card firstCard;
     public Card secondCard;
 
-    public Text timeTxt;
+    public Text[] timeTxt;
     public GameObject endPanel;
 
     public Queue<Text> looseQueue = new Queue<Text>();
@@ -41,14 +39,15 @@ public class GameManager : MonoBehaviour
                 Text text = looseQueue.Dequeue();
                 return text;
             }
-            if (timeLoosePrefab == null) 
-            { 
-                timeLoosePrefab = GameObject.Instantiate(timeTxt.gameObject).GetComponent<Text>();
+            if (timeLoosePrefab == null)
+            {
+                timeLoosePrefab = GameObject.Instantiate(timeTxt[0].gameObject).GetComponent<Text>();
                 timeLoosePrefab.gameObject.SetActive(false);
-                timeLoosePrefab.transform.parent = timeTxt.transform.parent;
+                timeLoosePrefab.transform.parent = timeTxt[0].transform.parent;
             }
             Text t = GameObject.Instantiate(timeLoosePrefab);
-            t.transform.parent = timeTxt.transform.parent;
+            t.transform.parent = timeTxt[0].transform.parent;
+
 
             return t;
         }
@@ -64,6 +63,7 @@ public class GameManager : MonoBehaviour
     float time = 30.0f;
 
     public bool isHardMode;
+    public bool isHorrorMode = false;
 
 
     private void Awake()
@@ -84,9 +84,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isGameDone)time -= Time.deltaTime;
-        timeTxt.text = time.ToString("N2");
-        if(time <= 0.0f)
+        if (!isGameDone) time -= Time.deltaTime;
+        string timeStr = time.ToString("N2");
+        foreach (var txt in timeTxt)
+        {
+            if (txt != null)
+                txt.text = timeStr;
+        }
+        if (time <= 0.0f)
         {
             GameEnd();
         }
@@ -100,14 +105,17 @@ public class GameManager : MonoBehaviour
         looseT.fontSize = 50;
         looseT.color = Color.red;
 
-        looseT.transform.position = timeTxt.transform.position + (Vector3.right * 150f);
+        looseT.transform.position = timeTxt[0].transform.position + (Vector3.right * 150f);
         looseT.transform.DOLocalMoveY(looseT.transform.position.y+100, 3f).OnComplete(() => { looseT.gameObject.SetActive(false); looseQueue.Enqueue(looseT); });
     }
     public void GameEnd()
     {
         DOTween.Clear(true);
-        Invoke("OnInteractable", 1f);
-
+        if(isHorrorMode == false)
+        {
+            Invoke("OnInteractable", 1f);
+        }
+        
         float clearTime = 30f - time;
         if(time < 0.0f)
         {
@@ -134,6 +142,10 @@ public class GameManager : MonoBehaviour
         }
 
         endPanel.SetActive(true);
+        if (isHorrorMode == true)
+        {
+            Invoke("LoadHorrorScene", 5f);
+        }
     }
 
     public void Matched(bool isHardMode = false) 
@@ -197,6 +209,7 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
 
     public void LoadHorrorScene()
     {

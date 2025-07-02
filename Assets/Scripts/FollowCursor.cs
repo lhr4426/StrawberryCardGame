@@ -35,4 +35,5 @@ public class FollowCursor : MonoBehaviour
             Destroy(this.gameObject); // FollowCursor 스크립트 제거
         }
     }
+
 }

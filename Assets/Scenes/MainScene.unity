@@ -318,6 +318,7 @@ MonoBehaviour:
   bgmClip: {fileID: 0}
   matchClip: {fileID: 0}
   flipClip: {fileID: 0}
+  horrorTitleBgm: {fileID: 0}
   bgmVolume: 0
   sfxVolume: 0
   isBgmMuted: 0
@@ -719,7 +720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
-  timeTxt: {fileID: 653908200}
+  timeTxt:
+  - {fileID: 653908200}
   endPanel: {fileID: 833161245}
   timeLoosePrefab: {fileID: 0}
   clearTxt: {fileID: 1102360575}
@@ -727,6 +729,7 @@ MonoBehaviour:
   cardCount: 0
   isGameDone: 0
   isHardMode: 0
+  isHorrorMode: 0
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
