@@ -9,15 +9,18 @@ public class SoundSlider : MonoBehaviour
     [SerializeField]bool isBGM = false;
     private void Start()
     {
+        Slider slider = GetComponent<Slider>();
         if (isBGM)
         {
-            GetComponent<Slider>().value = AudioManager.instance.bgmVolume;
-            GetComponent<Slider>().onValueChanged.AddListener((sValue) => { AudioManager.instance.BgmSliderChanged(sValue); });
+            slider.value = AudioManager.instance.bgmVolume;
+            AudioManager.instance.BgmSliderChanged(slider.value);
+            slider.onValueChanged.AddListener((sValue) => { AudioManager.instance.BgmSliderChanged(sValue); });
         }
         else
         {
-            GetComponent<Slider>().value = AudioManager.instance.sfxVolume;
-            GetComponent<Slider>().onValueChanged.AddListener((sValue) => { AudioManager.instance.SfxSliderChanged(sValue); });
+            slider.value = AudioManager.instance.sfxVolume;
+            AudioManager.instance.SfxSliderChanged(slider.value);
+            slider.onValueChanged.AddListener((sValue) => { AudioManager.instance.SfxSliderChanged(sValue); });
         }
     }
 }

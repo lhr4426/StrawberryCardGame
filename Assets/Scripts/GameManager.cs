@@ -134,18 +134,27 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator CardEffect(SpriteGlowEffect first,SpriteGlowEffect second)
     {
-        first.OutlineWidth = 1;
-        second.OutlineWidth = 1;
-        first.GlowBrightness = 4;
-        second.GlowBrightness = 4;
+        bool isOn = PlayerPrefs.GetInt("vfxOnOFF") == 1 ? true : false;
 
-        do
+        if (isOn)
         {
-            first.GlowBrightness -= Time.deltaTime*10;
-            second.GlowBrightness -= Time.deltaTime*10;
-            yield return new WaitForEndOfFrame();
-        } while (first.GlowBrightness >1f);
+            first.OutlineWidth = 1;
+            second.OutlineWidth = 1;
+            first.GlowBrightness = 4;
+            second.GlowBrightness = 4;
 
+            do
+            {
+                first.GlowBrightness -= Time.deltaTime * 10;
+                second.GlowBrightness -= Time.deltaTime * 10;
+                yield return new WaitForEndOfFrame();
+            } while (first.GlowBrightness > 1f);
+        }
+        else
+        {
+            first.OutlineWidth = 0;
+            second.OutlineWidth = 0;
 
+        }
     }
 }
