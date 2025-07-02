@@ -1317,6 +1317,7 @@ MonoBehaviour:
   settingToggleClip: {fileID: 8300000, guid: ab2edec1b60c77f459e1c4c4f179bf06, type: 3}
   horrorGameBgm: {fileID: 8300000, guid: 147f450b2f568e14d894ed5c2ba9d69d, type: 3}
   horrorClick: {fileID: 8300000, guid: 8d58198ef81f046429af51b2e33dab9a, type: 3}
+  normalClear: {fileID: 8300000, guid: 0bbeb1759e1fecf4f9faee9134c82cb2, type: 3}
   bgmVolume: 1
   sfxVolume: 1
   isBgmMuted: 0
