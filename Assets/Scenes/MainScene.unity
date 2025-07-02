@@ -721,10 +721,12 @@ MonoBehaviour:
   secondCard: {fileID: 0}
   timeTxt: {fileID: 653908200}
   endPanel: {fileID: 833161245}
+  timeLoosePrefab: {fileID: 0}
   clearTxt: {fileID: 1102360575}
   bestTxt: {fileID: 1189058828}
   cardCount: 0
   isGameDone: 0
+  isHardMode: 0
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
