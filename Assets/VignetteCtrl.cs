@@ -14,15 +14,17 @@ public class VignetteCtrl : MonoBehaviour
     public float curr = 0;
     readonly float min = 0.1f;
     readonly float max = 0.5f;
-    float res;
+    float res = 1f;
     bool vigTrigger;
 
     bool rt;// reverseTrigger
 
-    public Transform testTR;
-    void Start()
+    private void Awake()
     {
         if (GetComponent<Volume>().profile.TryGet<Vignette>(out Vignette vgt)) vignette = vgt;
+    }
+    void Start()
+    {
         curr = vignette.intensity.value;
         res = (Screen.width+Screen.height)/2f;
     }
@@ -35,8 +37,6 @@ public class VignetteCtrl : MonoBehaviour
         Vector2 screenPos = Camera.main.WorldToScreenPoint(pos);
         Vector2 mousePos = Input.mousePosition;
 
-
-
         curr = 1f-Vector2.Distance(screenPos, mousePos)/(res);
 
         vignette.intensity.value = curr;
@@ -46,8 +46,6 @@ public class VignetteCtrl : MonoBehaviour
     {
         if (vignette == null&&GetComponent<Volume>().profile.TryGet<Vignette>(out Vignette vgt)) vignette = vgt;
         curr = vignette.intensity.value;
-
-
     }
     public void TimePerVignette()
     {

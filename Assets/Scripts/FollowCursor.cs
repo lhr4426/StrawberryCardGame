@@ -1,6 +1,8 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class FollowCursor : MonoBehaviour
@@ -8,6 +10,10 @@ public class FollowCursor : MonoBehaviour
     public float speed = 5f; 
     public float gameOverDistance; // 게임 오브젝트와 마우스 포인터 사이 게임오버 기준 거리
     public float shakeDistance; // 카메라가 흔들리기 시작 할 거리
+
+    private bool stopShake;
+
+    public VignetteCtrl vignetter;
 
     public Vector3 originalCameraPosition; // 카메라 원래 위치 저장용
 
@@ -33,22 +39,31 @@ public class FollowCursor : MonoBehaviour
         targetPosition.z = 0; // Z축 위치를 0으로 설정하여 2D 평면에서 움직이도록 함
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
+        if(!stopShake)vignetter.MouseTraceVignette(transform.position);
         float distance = Vector3.Distance(transform.position, targetPosition);
         if (distance < gameOverDistance)
         {
             // 놀래키기
             jumpScareImage.SetActive(true);
-            Destroy(this.gameObject); // FollowCursor 스크립트 제거
-            Invoke("OnExitButton", 0.5f);
+            StartCoroutine(DestroyDirrection());
+            stopShake = true;
         }
-        
+
         UpdateShaking(distance);
     }
+    public void OnDestroy()
+    {
+        Invoke("OnExitButton", 0.5f);
+    }
 
-    
     public void UpdateShaking(float distance)
     {
+        
+        if (stopShake) 
+        {
+            Camera.main.transform.position = originalCameraPosition; // 카메라 원래 위치로 되돌리기
+            return; 
+        }
         // 가까워질수록 카메라가 흔들리도록 함
 
         float intensity = Mathf.Clamp01(1f - (distance / shakeDistance));
@@ -79,6 +94,18 @@ public class FollowCursor : MonoBehaviour
 
     public void OnExitButton()
     {
+        
+        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+    IEnumerator DestroyDirrection()
+    {
+        float curr = 0;
+        do
+        {
+            curr += Time.deltaTime;
+            yield return null;
+        } while (curr <5f);
+        Destroy(transform.parent.gameObject);
     }
 }
