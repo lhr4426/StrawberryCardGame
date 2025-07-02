@@ -213,6 +213,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadHorrorScene()
     {
+        AudioManager.instance.bgmAudioSource.Stop();
+        AudioManager.instance.HorrorGameBgm();
         SceneManager.LoadScene("HorrorGameScene");
     }
 }

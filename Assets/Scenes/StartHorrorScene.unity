@@ -343,6 +343,10 @@ MonoBehaviour:
   matchClip: {fileID: 8300000, guid: 58652d4b374e389469947361421ff3b4, type: 3}
   flipClip: {fileID: 8300000, guid: 3640b972750c8a34b954222d5ee3ea96, type: 3}
   horrorTitleBgm: {fileID: 8300000, guid: 33dc5ee9c50d8f34c835f54d4af6c5d0, type: 3}
+  normalClick: {fileID: 8300000, guid: 8d58198ef81f046429af51b2e33dab9a, type: 3}
+  settingToggleClip: {fileID: 0}
+  horrorGameBgm: {fileID: 0}
+  horrorClick: {fileID: 8300000, guid: 8d58198ef81f046429af51b2e33dab9a, type: 3}
   bgmVolume: 1
   sfxVolume: 1
   isBgmMuted: 0
@@ -567,6 +571,7 @@ GameObject:
   - component: {fileID: 474258724}
   - component: {fileID: 474258723}
   - component: {fileID: 474258722}
+  - component: {fileID: 474258726}
   m_Layer: 5
   m_Name: SettingBtn
   m_TagString: Untagged
@@ -653,10 +658,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 474258719}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 474258726}
+        m_TargetAssemblyTypeName: MainButtons, Assembly-CSharp
+        m_MethodName: OnHorrorSettingButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -703,6 +708,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474258719}
   m_CullTransparentMesh: 1
+--- !u!114 &474258726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474258719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingPanel: {fileID: 0}
+  hiddenButton: {fileID: 0}
+  checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &562005754
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +889,7 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   hiddenButton: {fileID: 0}
   checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &691228438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1061,7 @@ GameObject:
   - component: {fileID: 962433063}
   - component: {fileID: 962433062}
   - component: {fileID: 962433061}
+  - component: {fileID: 962433065}
   m_Layer: 5
   m_Name: QuitBtn
   m_TagString: Untagged
@@ -1125,10 +1148,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962433058}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 962433065}
+        m_TargetAssemblyTypeName: MainButtons, Assembly-CSharp
+        m_MethodName: OnHorrorSettingButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1175,6 +1198,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962433058}
   m_CullTransparentMesh: 1
+--- !u!114 &962433065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962433058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingPanel: {fileID: 0}
+  hiddenButton: {fileID: 0}
+  checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &1479274283
 GameObject:
   m_ObjectHideFlags: 0
