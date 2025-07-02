@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &27337584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -293,8 +293,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1200904756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -485,6 +485,7 @@ MonoBehaviour:
   settingPanel: {fileID: 27337583}
   hiddenButton: {fileID: 1729196017}
   checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &100577675
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +519,7 @@ RectTransform:
   m_Father: {fileID: 737563423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1165,6 +1166,7 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   hiddenButton: {fileID: 0}
   checkPanel: {fileID: 586458276}
+  SettingBtn: {fileID: 0}
 --- !u!1 &268442993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1263,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 467762424}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: SettingToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &467762421
 GameObject:
@@ -1299,6 +1313,10 @@ MonoBehaviour:
   matchClip: {fileID: 8300000, guid: 58652d4b374e389469947361421ff3b4, type: 3}
   flipClip: {fileID: 8300000, guid: 3640b972750c8a34b954222d5ee3ea96, type: 3}
   horrorTitleBgm: {fileID: 8300000, guid: 33dc5ee9c50d8f34c835f54d4af6c5d0, type: 3}
+  normalClick: {fileID: 8300000, guid: ac17cfbb7a0f79a40b6f8f5eb4a74f48, type: 3}
+  settingToggleClip: {fileID: 8300000, guid: ab2edec1b60c77f459e1c4c4f179bf06, type: 3}
+  horrorGameBgm: {fileID: 8300000, guid: 147f450b2f568e14d894ed5c2ba9d69d, type: 3}
+  horrorClick: {fileID: 8300000, guid: 8d58198ef81f046429af51b2e33dab9a, type: 3}
   bgmVolume: 1
   sfxVolume: 1
   isBgmMuted: 0
@@ -1677,6 +1695,7 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   hiddenButton: {fileID: 0}
   checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &562953247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1805,7 @@ RectTransform:
   m_Father: {fileID: 29782846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2304,6 +2323,7 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   hiddenButton: {fileID: 0}
   checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!114 &955313352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,6 +3087,7 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   hiddenButton: {fileID: 0}
   checkPanel: {fileID: 586458276}
+  SettingBtn: {fileID: 0}
 --- !u!114 &1509829990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3463,6 +3484,7 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   hiddenButton: {fileID: 0}
   checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &1653367510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,6 +3756,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: SfxToggleChanged
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 467762424}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: SettingToggle
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4049,6 +4083,7 @@ MonoBehaviour:
   settingPanel: {fileID: 0}
   hiddenButton: {fileID: 0}
   checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &1783112615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4239,8 +4274,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 134973537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4447,6 +4482,7 @@ MonoBehaviour:
   settingPanel: {fileID: 27337583}
   hiddenButton: {fileID: 1729196017}
   checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &1906554425
 GameObject:
   m_ObjectHideFlags: 0
