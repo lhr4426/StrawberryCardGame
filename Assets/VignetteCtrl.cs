@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using System.Linq;
 using Unity.VisualScripting;
+using DG.Tweening;
 
 
 public class VignetteCtrl : MonoBehaviour
@@ -51,19 +52,19 @@ public class VignetteCtrl : MonoBehaviour
         for (int i = 0; i < tracers.Count; i++)
         {
             if (tracers[i].IsDestroyed()) return;
-            float curr = Vector2.Distance(Input.mousePosition, tracers[i].position);
-            if (cDist > tracers.Count)
+            Vector2 tempScreenPos = Camera.main.WorldToScreenPoint(tracers[i].position);
+            float x = tempScreenPos.x - Input.mousePosition.x;
+            float y = tempScreenPos.y - Input.mousePosition.y;
+
+            float tempdist = (x * x) + (y * y);
+            if (cDist > tempdist)
             {
-                cDist = curr;
+                cDist = tempdist;
                 pos = tracers[i].transform.position;
             }
         }
 
-
-        Vector2 screenPos = Camera.main.WorldToScreenPoint(pos);
-        Vector2 mousePos = Input.mousePosition;
-
-        curr = 1f-Vector2.Distance(screenPos, mousePos)/(res);
+        curr = 1f-(Mathf.Sqrt(cDist) / res);
 
         vignette.intensity.value = curr;
     }
