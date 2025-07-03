@@ -59,9 +59,19 @@ public class FollowCursor : MonoBehaviour
             if (sr != null)
             {
                 float t = Time.time;
-                Color newColor = Color.HSVToRGB(1f, (t * 0.4f) % 1f, 1f);
-                newColor.a = 1f; // 알파값 고정
-                sr.color = newColor;
+                if((t * 0.4f) / 1 %2 < 1)
+                {
+                    Color newColor = Color.HSVToRGB(1f, (t * 0.4f) % 1f, 1f);
+                    newColor.a = (t * 0.4f) % 1f;
+                    sr.color = newColor;
+                }
+                else
+                {
+                    Color newColor = Color.HSVToRGB(1f, 1f - (t * 0.4f) % 1f, 1f);
+                    newColor.a = 1f - (t * 0.4f) % 1f;
+                    sr.color = newColor;
+                }
+                
             }
         }
     }
