@@ -128,8 +128,10 @@ public class GameManager : MonoBehaviour
         {
             Invoke("OnInteractable", 1f);
         }
-        
-        float clearTime = 30f - time;
+
+        float clearTime;
+        if (isHardMode) clearTime = 45f - time;
+        else clearTime = 30f - time;
         if(time < 0.0f)
         {
             clearTxt.text = "실패!";
@@ -140,7 +142,10 @@ public class GameManager : MonoBehaviour
         }
             
         string bestKey = isHardMode ? "BestTime_Hidden" : "BestTime_Normal";
-        float bestTime = PlayerPrefs.GetFloat(bestKey, 30f);
+        float bestTime;
+        if (isHardMode) bestTime = PlayerPrefs.GetFloat(bestKey, 45f);
+        else bestTime = PlayerPrefs.GetFloat(bestKey, 30f);
+
 
         if (clearTime < bestTime)
         {
