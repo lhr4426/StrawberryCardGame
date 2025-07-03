@@ -1579,7 +1579,7 @@ MonoBehaviour:
   isGameDone: 0
   isHardMode: 1
   isHorrorMode: 1
-  followCursor: {fileID: 0}
+  followCursor: {fileID: 1282381886}
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
