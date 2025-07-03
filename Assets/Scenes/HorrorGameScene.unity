@@ -356,6 +356,7 @@ MonoBehaviour:
   normalClear: {fileID: 0}
   horrorCredit: {fileID: 0}
   horrorGameOver: {fileID: 0}
+  horrorScream: {fileID: 0}
   bgmVolume: 0
   sfxVolume: 0
   isBgmMuted: 0
