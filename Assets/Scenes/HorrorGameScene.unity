@@ -354,6 +354,8 @@ MonoBehaviour:
   horrorGameBgm: {fileID: 0}
   horrorClick: {fileID: 0}
   normalClear: {fileID: 0}
+  horrorCredit: {fileID: 0}
+  horrorGameOver: {fileID: 0}
   bgmVolume: 0
   sfxVolume: 0
   isBgmMuted: 0
@@ -644,6 +646,11 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &531927009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7712740760894933824, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+  m_PrefabInstance: {fileID: 754125988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &653908198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,22 +1040,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1062185230892842377, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8441499268366251115, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1282381886}
   m_SourcePrefab: {fileID: 100100000, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
---- !u!114 &754125989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1062185230892842377, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
-  m_PrefabInstance: {fileID: 754125988}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a033a4ab234d6a841a4c6026eb52b23f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &893967596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1270,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1282381882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8441499268366251115, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+  m_PrefabInstance: {fileID: 754125988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1282381886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282381882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc1808834729c6499937b0c00d872bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  gameOverDistance: 0
+  shakeDistance: 0
+  vignetter: {fileID: 1041823838}
+  originalCameraPosition: {x: 0, y: 0, z: 0}
+  jumpScareImage: {fileID: 531927009}
+  horrorChaser: {fileID: 1282381882}
 --- !u!1 &1296459424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1579,7 @@ MonoBehaviour:
   isGameDone: 0
   isHardMode: 1
   isHorrorMode: 1
-  followCursor: {fileID: 754125989}
+  followCursor: {fileID: 0}
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0

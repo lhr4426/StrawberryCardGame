@@ -21,6 +21,8 @@ public class FollowCursor : MonoBehaviour
 
     private Tween shaking; // 카메라 흔드는거 저장해놓고 중단할 때 사용
 
+    public GameObject horrorChaser;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,18 @@ public class FollowCursor : MonoBehaviour
         }
 
         UpdateShaking(distance);
+
+        if (horrorChaser != null)
+        {
+            SpriteRenderer sr = horrorChaser.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                float t = Time.time;
+                Color newColor = Color.HSVToRGB(1f, (t * 0.4f) % 1f, 1f);
+                newColor.a = 1f; // 알파값 고정
+                sr.color = newColor;
+            }
+        }
     }
     public void OnDestroy()
     {
@@ -94,9 +108,8 @@ public class FollowCursor : MonoBehaviour
 
     public void OnExitButton()
     {
-        #if UNITY_EDITOR
+
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
         Application.Quit();
     }
     IEnumerator DestroyDirrection()
