@@ -237,4 +237,24 @@ public class GameManager : MonoBehaviour
             CursorFaster.instance.HorrorSceneAgain();
         }
     }
+
+    public void HorrorGameOver()
+    {
+       StartCoroutine(HorrorGameOverRoutine());
+    }
+
+    IEnumerator HorrorGameOverRoutine()
+    {
+        Debug.Log("Exit Game");
+        float curr = 0;
+        do
+        {
+            curr += Time.deltaTime;
+            yield return null;
+        } while (curr < 1.0f);
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
 }
