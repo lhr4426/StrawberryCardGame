@@ -56,7 +56,7 @@ public class FollowCursor : MonoBehaviour
             /*
             참고 : 테스트 할 때 여기서 오디오 null 오류나면 Destroy 안됩니다.
             */
-            // AudioManager.instance.HorrorGameOverSound(); 
+            AudioManager.instance.HorrorGameOverSound(); 
             Destroy(this.gameObject);
         }
 
