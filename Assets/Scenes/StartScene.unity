@@ -776,6 +776,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5607460919131197602, guid: b45c94f9e39ce0748b672ed96cbb82ce, type: 3}
+      propertyPath: cursorClick
+      value: 
+      objectReference: {fileID: 2800000, guid: c0762f5c32ae738428f60d537be08554, type: 3}
+    - target: {fileID: 5607460919131197602, guid: b45c94f9e39ce0748b672ed96cbb82ce, type: 3}
+      propertyPath: cursorDefault
+      value: 
+      objectReference: {fileID: 2800000, guid: de7aef726ad1eb744a2e4c0f715ceca4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
