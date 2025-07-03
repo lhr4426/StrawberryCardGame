@@ -94,9 +94,8 @@ public class FollowCursor : MonoBehaviour
 
     public void OnExitButton()
     {
-        #if UNITY_EDITOR
+        
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
         Application.Quit();
     }
     IEnumerator DestroyDirrection()

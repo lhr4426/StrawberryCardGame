@@ -19,6 +19,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip horrorGameBgm;
     public AudioClip horrorClick;
     public AudioClip normalClear;
+    public AudioClip horrorCredit;
+    public AudioClip horrorGameOver;
 
 
     public float bgmVolume;
@@ -164,5 +166,15 @@ public class AudioManager : MonoBehaviour
     public void NormalClearSound()
     {
         sfxAudioSource.PlayOneShot(normalClear);
+    }
+
+    public void HorrorCreditSound()
+    {
+        sfxAudioSource.PlayOneShot(horrorCredit);
+    }
+
+    public void HorrorGameOverSound()
+    {
+        sfxAudioSource.PlayOneShot(horrorGameOver);
     }
 }

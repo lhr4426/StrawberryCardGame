@@ -1318,6 +1318,7 @@ MonoBehaviour:
   horrorGameBgm: {fileID: 8300000, guid: 147f450b2f568e14d894ed5c2ba9d69d, type: 3}
   horrorClick: {fileID: 8300000, guid: 8d58198ef81f046429af51b2e33dab9a, type: 3}
   normalClear: {fileID: 8300000, guid: 0bbeb1759e1fecf4f9faee9134c82cb2, type: 3}
+  horrorCredit: {fileID: 8300000, guid: cd4e32be9a43f474385b48e41949ad88, type: 3}
   bgmVolume: 1
   sfxVolume: 1
   isBgmMuted: 0
