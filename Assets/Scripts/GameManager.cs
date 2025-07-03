@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     public Queue<Text> looseQueue = new Queue<Text>();
     public Text timeLoosePrefab;
+
+    
     public Text GetLooseText
     {
         get 
@@ -65,6 +67,8 @@ public class GameManager : MonoBehaviour
     public bool isHardMode;
     public bool isHorrorMode = false;
 
+
+    public FollowCursor followCursor;
 
     private void Awake()
     {
@@ -142,8 +146,13 @@ public class GameManager : MonoBehaviour
         }
 
         endPanel.SetActive(true);
+        
         if (isHorrorMode == true)
         {
+            if(followCursor != null)
+            {
+                Destroy(followCursor.gameObject);
+            }
             Invoke("LoadHorrorScene", 5f);
         }
     }

@@ -353,6 +353,7 @@ MonoBehaviour:
   settingToggleClip: {fileID: 0}
   horrorGameBgm: {fileID: 0}
   horrorClick: {fileID: 0}
+  normalClear: {fileID: 0}
   bgmVolume: 0
   sfxVolume: 0
   isBgmMuted: 0
@@ -1037,6 +1038,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+--- !u!114 &754125989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1062185230892842377, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+  m_PrefabInstance: {fileID: 754125988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a033a4ab234d6a841a4c6026eb52b23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &893967596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1555,7 @@ MonoBehaviour:
   isGameDone: 0
   isHardMode: 1
   isHorrorMode: 1
+  followCursor: {fileID: 754125989}
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
