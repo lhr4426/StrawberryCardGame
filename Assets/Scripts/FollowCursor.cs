@@ -32,6 +32,7 @@ public class FollowCursor : MonoBehaviour
         Vector2 size = GetComponent<SpriteRenderer>().bounds.size; // 스프라이트의 크기
         gameOverDistance = size.x / 2; // 게임 오브젝트의 크기 반으로 설정
         shakeDistance = size.x * 2f;
+        vignetter = GameObject.Find("Global Volume").GetComponent<VignetteCtrl>();
     }
 
     // Update is called once per frame

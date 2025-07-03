@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CursorFaster : MonoBehaviour
 {
@@ -24,13 +26,15 @@ public class CursorFaster : MonoBehaviour
         }   
         DontDestroyOnLoad(gameObject);
     }
+
     public void HorrorSceneAgain()
     {
         stageNumber++;
         for(int i= 0; i<stageNumber; i++)
         {
             GameObject newChaser = Instantiate(horrorChaser, new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-3.0f, 3.0f), 0), Quaternion.identity);
-            newChaser.GetComponent<FollowCursor>().speed += speedAdder * stageNumber; // 속도 증가
+            FollowCursor cursor = newChaser.GetComponent<FollowCursor>();
+            cursor.speed += speedAdder * stageNumber; // 속도 증가
         }
     }
 
