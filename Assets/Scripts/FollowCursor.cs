@@ -86,7 +86,7 @@ public class FollowCursor : MonoBehaviour
     }
     public void OnDestroy()
     {
-        Invoke("OnExitButton", 0.5f);
+        GameManager.instance.HorrorGameOver(); 
     }
 
     public void UpdateShaking(float distance)
@@ -123,25 +123,6 @@ public class FollowCursor : MonoBehaviour
             snapping: false,
             fadeOut: false
             );
-    }
-
-    public void OnExitButton()
-    {
-    #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-    #endif
-        Application.Quit();
-    }
-    IEnumerator DestroyDirection()
-    {
-        Debug.Log("Destroy");
-        float curr = 0;
-        do
-        {
-            curr += Time.deltaTime;
-            yield return null;
-        } while (curr <0.5f);
-        Destroy(gameObject);
     }
 
 }
