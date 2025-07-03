@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip normalClear;
     public AudioClip horrorCredit;
     public AudioClip horrorGameOver;
+    public AudioClip horrorScream;
 
 
     public float bgmVolume;
@@ -176,5 +177,6 @@ public class AudioManager : MonoBehaviour
     public void HorrorGameOverSound()
     {
         sfxAudioSource.PlayOneShot(horrorGameOver);
+        sfxAudioSource.PlayOneShot(horrorScream);
     }
 }
