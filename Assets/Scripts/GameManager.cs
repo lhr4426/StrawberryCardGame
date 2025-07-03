@@ -108,6 +108,15 @@ public class GameManager : MonoBehaviour
         {
             GameEnd();
         }
+        
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            Transform obj = GameObject.Find("Board").transform;
+            for (int i = 0; i < obj.childCount; i++)
+            {
+                obj.GetChild(i).GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>().text = obj.GetChild(i).GetComponent<Card>().idx.ToString();
+            }
+        }
     }
 
     public void CallLoose()
