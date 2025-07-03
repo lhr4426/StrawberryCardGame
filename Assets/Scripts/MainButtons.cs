@@ -23,6 +23,12 @@ public class MainButtons : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    public void OnTitleButton()
+    {
+        AudioManager.instance.NormalClickSound();
+        SceneManager.LoadScene("StartScene");
+    }
+
     public void OnHiddenPlayButton()
     {
         AudioManager.instance.NormalClickSound();

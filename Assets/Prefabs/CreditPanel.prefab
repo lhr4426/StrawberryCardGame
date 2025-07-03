@@ -638,14 +638,14 @@ GameObject:
   - component: {fileID: 8527744090936708881}
   - component: {fileID: 2006789718765459095}
   - component: {fileID: 6201641478084355397}
-  - component: {fileID: 6548582460845004712}
+  - component: {fileID: 6414044109186686540}
   m_Layer: 5
   m_Name: CreditPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7632793823867024868
 RectTransform:
   m_ObjectHideFlags: 0
@@ -757,9 +757,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6548582460845004712}
-        m_TargetAssemblyTypeName: RewardedButton, Assembly-CSharp
-        m_MethodName: ShowAd
+      - m_Target: {fileID: 6414044109186686540}
+        m_TargetAssemblyTypeName: MainButtons, Assembly-CSharp
+        m_MethodName: OnTitleButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -769,7 +769,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6548582460845004712
+--- !u!114 &6414044109186686540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -778,11 +778,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3424782166062433893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 754518b63f926db498c2a2b8ff0be8da, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d75aa699659d454192f2be7a3dbec93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _androidAdUnitId: Rewarded_Android
-  _iOSAdUnitId: Rewarded_iOS
+  settingPanel: {fileID: 0}
+  hiddenButton: {fileID: 0}
+  checkPanel: {fileID: 0}
+  SettingBtn: {fileID: 0}
 --- !u!1 &3640715794854515041
 GameObject:
   m_ObjectHideFlags: 0
