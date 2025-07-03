@@ -7,11 +7,14 @@ public class Board : MonoBehaviour
 {
     public GameObject card;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         GameManager.instance.isHardMode = false;
         GameManager.instance.isGameDone = false;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         int[] arr = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
         arr = arr.OrderBy(x => Random.Range(0f, 7f)).ToArray();
 

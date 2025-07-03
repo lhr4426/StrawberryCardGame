@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
 
     public bool isGameDone;
-    float time = 30.0f;
+    float time;
 
     public bool isHardMode;
     public bool isHorrorMode = false;
@@ -83,7 +83,15 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.sceneLoaded += OnSceneLoaded;
+        if (isHardMode)
+        {
+            time = 45.0f;
+        }
+        else
+        {
+            time = 30.0f;
 
+        }
     }
 
     // Update is called once per frame
