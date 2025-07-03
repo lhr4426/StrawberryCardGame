@@ -46,6 +46,7 @@ public class FollowCursor : MonoBehaviour
         if (distance < gameOverDistance)
         {
             // ³î·¡Å°±â
+            AudioManager.instance.HorrorGameOverSound();
             jumpScareImage.SetActive(true);
             StartCoroutine(DestroyDirrection());
             stopShake = true;

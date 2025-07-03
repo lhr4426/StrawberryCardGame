@@ -1320,7 +1320,7 @@ MonoBehaviour:
   normalClear: {fileID: 8300000, guid: 0bbeb1759e1fecf4f9faee9134c82cb2, type: 3}
   horrorCredit: {fileID: 8300000, guid: cd4e32be9a43f474385b48e41949ad88, type: 3}
   horrorGameOver: {fileID: 8300000, guid: edb65c9dfa6e8be4a8aceb71ce542ed9, type: 3}
-  horrorScream: {fileID: 8300000, guid: 92d7ff54b698c464f9e99863de0f09e3, type: 3}
+  horrorScream: {fileID: 8300000, guid: edf08e2da64204e479ef1cf3053e2556, type: 3}
   bgmVolume: 1
   sfxVolume: 1
   isBgmMuted: 0

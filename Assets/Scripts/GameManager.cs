@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(followCursor.gameObject);
             }
+            AudioManager.instance.HorrorCreditSound();
             Invoke("LoadHorrorScene", 5f);
         }
     }
