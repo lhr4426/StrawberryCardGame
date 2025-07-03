@@ -270,10 +270,20 @@ MonoBehaviour:
   matchClip: {fileID: 0}
   flipClip: {fileID: 0}
   horrorTitleBgm: {fileID: 0}
+  normalClick: {fileID: 0}
+  settingToggleClip: {fileID: 0}
+  horrorGameBgm: {fileID: 0}
+  horrorClick: {fileID: 0}
+  normalClear: {fileID: 0}
+  horrorCredit: {fileID: 0}
+  horrorGameOver: {fileID: 0}
+  horrorScream: {fileID: 0}
   bgmVolume: 0
   sfxVolume: 0
   isBgmMuted: 0
   isSfxMuted: 0
+  bgmToggle: {fileID: 0}
+  sfxToggle: {fileID: 0}
 --- !u!1 &417118050
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curr: 0
-  testTR: {fileID: 0}
 --- !u!1 &500843779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1065,7 @@ MonoBehaviour:
   isGameDone: 0
   isHardMode: 0
   isHorrorMode: 1
+  followCursor: {fileID: 0}
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
