@@ -13,8 +13,6 @@ public class FollowCursor : MonoBehaviour
 
     private bool stopShake;
 
-    public VignetteCtrl vignetter;
-
     public Vector3 originalCameraPosition; // 카메라 원래 위치 저장용
 
     public GameObject jumpScareImage; // 점프스케어 이미지 오브젝트
@@ -23,6 +21,7 @@ public class FollowCursor : MonoBehaviour
 
     public GameObject horrorChaser;
 
+    private bool pauseCursor = false;
     private bool gameOver = false; // 게임 오버 상태를 나타내는 변수 : 소리 한 번만 재생하기 위해 사용
 
     // Start is called before the first frame update
@@ -32,22 +31,23 @@ public class FollowCursor : MonoBehaviour
         Vector2 size = GetComponent<SpriteRenderer>().bounds.size; // 스프라이트의 크기
         gameOverDistance = size.x / 2; // 게임 오브젝트의 크기 반으로 설정
         shakeDistance = size.x * 2f;
-        vignetter = GameObject.Find("Global Volume").GetComponent<VignetteCtrl>();
+        GameObject.Find("Global Volume").GetComponent<VignetteCtrl>().RegistTR(transform);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameOver) return;
         Vector3 mousePosition = Input.mousePosition; // 마우스 포지션 가져오기
         mousePosition.z = Mathf.Abs(Camera.main.transform.position.z); // 카메라와의 거리만큼 Z축 위치 설정
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         targetPosition.z = 0; // Z축 위치를 0으로 설정하여 2D 평면에서 움직이도록 함
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        if(!stopShake)vignetter.MouseTraceVignette(transform.position);
         float distance = Vector3.Distance(transform.position, targetPosition);
         if (distance < gameOverDistance && !gameOver)
         {
+            gameOver = true;
             Debug.Log("Game Over!");  
             // 놀래키기
             jumpScareImage.SetActive(true);
@@ -57,8 +57,9 @@ public class FollowCursor : MonoBehaviour
             /*
             참고 : 테스트 할 때 여기서 오디오 null 오류나면 Destroy 안됩니다.
             */
-            AudioManager.instance.HorrorGameOverSound(); 
-            Destroy(this.gameObject);
+            AudioManager.instance.HorrorGameOverSound();
+            GameManager.instance.HorrorGameOver();
+            Destroy(this.gameObject,2f);
         }
 
         UpdateShaking(distance);
@@ -84,10 +85,6 @@ public class FollowCursor : MonoBehaviour
                 
             }
         }
-    }
-    public void OnDestroy()
-    {
-        GameManager.instance.HorrorGameOver(); 
     }
 
     public void UpdateShaking(float distance)

@@ -33,7 +33,7 @@ public class CursorFaster : MonoBehaviour
         for(int i= 0; i<stageNumber; i++)
         {
             GameObject newChaser = Instantiate(horrorChaser, new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-3.0f, 3.0f), 0), Quaternion.identity);
-            FollowCursor cursor = newChaser.GetComponent<FollowCursor>();
+            FollowCursor cursor = newChaser.transform.GetChild(0).GetComponent<FollowCursor>();
             cursor.speed += speedAdder * stageNumber; // 속도 증가
         }
     }

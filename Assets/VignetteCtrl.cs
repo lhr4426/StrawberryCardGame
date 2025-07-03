@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
-using System.Linq.Expressions;
-using System;
+using System.Linq;
+using Unity.VisualScripting;
 
 
 public class VignetteCtrl : MonoBehaviour
@@ -15,11 +15,13 @@ public class VignetteCtrl : MonoBehaviour
     readonly float max = 0.5f;
     float res = 1f;
     bool vigTrigger;
-
+    public List<Transform> tracers = new List<Transform>();
     bool rt;// reverseTrigger
+    public bool isHorrorScene = false;
 
     private void Awake()
     {
+        if (!isHorrorScene) Destroy(this);
         if (GetComponent<Volume>().profile.TryGet<Vignette>(out Vignette vgt)) vignette = vgt;
     }
     void Start()
@@ -27,12 +29,37 @@ public class VignetteCtrl : MonoBehaviour
         curr = vignette.intensity.value;
         res = (Screen.width+Screen.height)/2f;
     }
+
+    private void Update()
+    {
+        MouseTraceVignette();
+    }
+
+    public void RegistTR(Transform tr)
+    {
+        tracers.Add(tr);
+    }
     /// <summary>
     /// worldPos기준으로 마우스를 추격하는 함수
     /// </summary>
     /// <param name="pos"></param>
-    public void MouseTraceVignette(Vector3 pos)
+    public void MouseTraceVignette()
     {
+
+        Vector2 pos = Vector2.one;
+        float cDist = float.MaxValue;
+        for (int i = 0; i < tracers.Count; i++)
+        {
+            if (tracers[i].IsDestroyed()) return;
+            float curr = Vector2.Distance(Input.mousePosition, tracers[i].position);
+            if (cDist > tracers.Count)
+            {
+                cDist = curr;
+                pos = tracers[i].transform.position;
+            }
+        }
+
+
         Vector2 screenPos = Camera.main.WorldToScreenPoint(pos);
         Vector2 mousePos = Input.mousePosition;
 

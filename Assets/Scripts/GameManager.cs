@@ -82,6 +82,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
         SceneManager.sceneLoaded += OnSceneLoaded;
         if (isHardMode)
         {
@@ -116,6 +118,10 @@ public class GameManager : MonoBehaviour
             {
                 obj.GetChild(i).GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>().text = obj.GetChild(i).GetComponent<Card>().idx.ToString();
             }
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            LoadHorrorScene();
         }
     }
 

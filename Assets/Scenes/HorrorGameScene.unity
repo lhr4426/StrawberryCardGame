@@ -1989,6 +1989,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curr: 0
+  tracers: []
+  isHorrorScene: 1
 --- !u!114 &1041823839
 MonoBehaviour:
   m_ObjectHideFlags: 0
