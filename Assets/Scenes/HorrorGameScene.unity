@@ -509,6 +509,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &501046848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501046849}
+  - component: {fileID: 501046850}
+  m_Layer: 0
+  m_Name: CursorFaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &501046849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501046848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.97048044, y: 0.59337044, z: 1.0040131}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501046850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501046848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5863886a0e4ec3148a8a7432948c62e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1084,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8441499268366251115, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
+      propertyPath: m_TagString
+      value: FollowCursor
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1062185230892842377, guid: ad3b971dd2baa564db7f57e662a5f401, type: 3}
     m_RemovedGameObjects: []
@@ -1287,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc1808834729c6499937b0c00d872bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   gameOverDistance: 0
   shakeDistance: 0
   vignetter: {fileID: 1041823838}
@@ -2924,3 +2972,4 @@ SceneRoots:
   - {fileID: 246184638}
   - {fileID: 754125988}
   - {fileID: 1041823840}
+  - {fileID: 501046849}

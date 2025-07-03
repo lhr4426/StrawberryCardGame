@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class FollowCursor : MonoBehaviour
 {
-    public float speed = 5f; 
+    public float speed = 0f; 
     public float gameOverDistance; // 게임 오브젝트와 마우스 포인터 사이 게임오버 기준 거리
     public float shakeDistance; // 카메라가 흔들리기 시작 할 거리
 
