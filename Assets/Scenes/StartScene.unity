@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmAudioSource: {fileID: 467762427}
   sfxAudioSource: {fileID: 467762426}
-  bgmClip: {fileID: 8300000, guid: 440b00e3cdc30724987511f2087f6579, type: 3}
+  bgmClip: {fileID: 8300000, guid: 353469fc23e5bb145a8a7abf67a91952, type: 3}
   matchClip: {fileID: 8300000, guid: 58652d4b374e389469947361421ff3b4, type: 3}
   flipClip: {fileID: 8300000, guid: 3640b972750c8a34b954222d5ee3ea96, type: 3}
   horrorTitleBgm: {fileID: 8300000, guid: 33dc5ee9c50d8f34c835f54d4af6c5d0, type: 3}
