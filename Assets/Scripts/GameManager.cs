@@ -82,7 +82,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
     // Update is called once per frame
@@ -226,5 +227,13 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.bgmAudioSource.Stop();
         AudioManager.instance.HorrorGameBgm();
         SceneManager.LoadScene("HorrorGameScene");
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "HorrorGameScene")
+        { 
+            CursorFaster.instance.HorrorSceneAgain();
+        }
     }
 }
