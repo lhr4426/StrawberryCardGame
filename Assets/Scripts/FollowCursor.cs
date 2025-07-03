@@ -23,6 +23,8 @@ public class FollowCursor : MonoBehaviour
 
     public GameObject horrorChaser;
 
+    private bool gameOver = false; // 게임 오버 상태를 나타내는 변수 : 소리 한 번만 재생하기 위해 사용
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,13 +45,19 @@ public class FollowCursor : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         if(!stopShake)vignetter.MouseTraceVignette(transform.position);
         float distance = Vector3.Distance(transform.position, targetPosition);
-        if (distance < gameOverDistance)
+        if (distance < gameOverDistance && !gameOver)
         {
+            Debug.Log("Game Over!");  
             // 놀래키기
-            AudioManager.instance.HorrorGameOverSound();
             jumpScareImage.SetActive(true);
-            StartCoroutine(DestroyDirrection());
             stopShake = true;
+            // StartCoroutine(DestroyDirection());
+            gameOver = true; // 게임 오버 상태로 변경
+            /*
+            참고 : 테스트 할 때 여기서 오디오 null 오류나면 Destroy 안됩니다.
+            */
+            AudioManager.instance.HorrorGameOverSound(); 
+            Destroy(this.gameObject);
         }
 
         UpdateShaking(distance);
@@ -119,20 +127,21 @@ public class FollowCursor : MonoBehaviour
 
     public void OnExitButton()
     {
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
+    #endif
         Application.Quit();
     }
-    IEnumerator DestroyDirrection()
+    IEnumerator DestroyDirection()
     {
+        Debug.Log("Destroy");
         float curr = 0;
         do
         {
             curr += Time.deltaTime;
             yield return null;
-        } while (curr <5f);
-        Destroy(transform.parent.gameObject);
+        } while (curr <0.5f);
+        Destroy(gameObject);
     }
 
 }
