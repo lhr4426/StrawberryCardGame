@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 3145356416527721347}
   m_Layer: 0
   m_Name: FollowCursor
-  m_TagString: Untagged
+  m_TagString: FollowCursor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,7 +240,6 @@ MonoBehaviour:
   speed: 0
   gameOverDistance: 0
   shakeDistance: 0
-  vignetter: {fileID: 0}
   originalCameraPosition: {x: 0, y: 0, z: 0}
   jumpScareImage: {fileID: 7712740760894933824}
   horrorChaser: {fileID: 8441499268366251115}

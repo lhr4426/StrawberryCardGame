@@ -68,8 +68,6 @@ public class GameManager : MonoBehaviour
     public bool isHorrorMode = false;
 
 
-    public FollowCursor followCursor;
-
     private void Awake()
     {
         if(instance == null)
@@ -178,9 +176,10 @@ public class GameManager : MonoBehaviour
         
         if (isHorrorMode == true)
         {
-            if(followCursor != null)
+            GameObject[] followCursors = GameObject.FindGameObjectsWithTag("FollowCursor");
+            foreach (GameObject cursor in followCursors)
             {
-                Destroy(followCursor.gameObject);
+                Destroy(cursor);
             }
             AudioManager.instance.HorrorCreditSound();
             Invoke("LoadHorrorScene", 5f);
