@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using DG.Tweening;
 
 public class Board : MonoBehaviour
 {
@@ -23,8 +24,7 @@ public class Board : MonoBehaviour
             GameObject go = Instantiate(card, this.transform);
             float x = (i % 4) * 1.4f - 2.1f;
             float y = (i / 4) * 1.4f - 3.0f;
-
-            go.transform.position = new Vector3(x, y, 0);
+            go.transform.DOMove(new Vector3(x, y, 0),0.4f);
             go.GetComponent<Card>().Setting(arr[i]);
         }
 
