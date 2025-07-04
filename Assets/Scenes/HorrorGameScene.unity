@@ -202,6 +202,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28895097}
   m_CullTransparentMesh: 1
+--- !u!1 &70866762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70866764}
+  - component: {fileID: 70866763}
+  m_Layer: 0
+  m_Name: HorrorTimeSet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &70866763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70866762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae69dbd3abb1d34f94b1bd0e2d2220d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &70866764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70866762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8164428, y: 1.1834959, z: 0.6871332}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &93039243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,9 +2675,9 @@ MonoBehaviour:
   bestTxt: {fileID: 224317308}
   cardCount: 0
   isGameDone: 0
+  time: 0
   isHardMode: 1
   isHorrorMode: 1
-  followCursor: {fileID: 0}
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
@@ -3594,3 +3638,4 @@ SceneRoots:
   - {fileID: 246184638}
   - {fileID: 1041823840}
   - {fileID: 501046849}
+  - {fileID: 70866764}

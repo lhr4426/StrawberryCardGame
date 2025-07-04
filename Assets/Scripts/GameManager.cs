@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
 
     public bool isGameDone;
-    float time;
+    public float time;
 
     public bool isHardMode;
     public bool isHorrorMode = false;

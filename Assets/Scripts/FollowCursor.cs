@@ -48,8 +48,9 @@ public class FollowCursor : MonoBehaviour
         if (distance < gameOverDistance && !gameOver)
         {
             gameOver = true;
-            Debug.Log("Game Over!");  
+            Debug.Log("Game Over!");
             // ³î·¡Å°±â
+            jumpScareImage.transform.position = Vector3.zero;
             jumpScareImage.SetActive(true);
             stopShake = true;
             // StartCoroutine(DestroyDirection());
