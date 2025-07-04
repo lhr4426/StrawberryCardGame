@@ -7,6 +7,7 @@ using DG.Tweening;
 public class Board : MonoBehaviour
 {
     public GameObject card;
+    public bool isHorrorMode = false;
 
     private void Awake()
     {
@@ -24,8 +25,16 @@ public class Board : MonoBehaviour
             GameObject go = Instantiate(card, this.transform);
             float x = (i % 4) * 1.4f - 2.1f;
             float y = (i / 4) * 1.4f - 3.0f;
-            go.transform.DOMove(new Vector3(x, y, 0),0.4f);
-            go.GetComponent<Card>().Setting(arr[i]);
+            if (!isHorrorMode)
+            {
+                go.transform.position = Vector3.zero;
+                go.transform.DOMove(new Vector3(x, y, 0), 0.4f);
+            }
+            else
+            {
+                go.transform.position = new Vector3(x, y, 0);
+            }
+                go.GetComponent<Card>().Setting(arr[i]);
         }
 
         GameManager.instance.cardCount = arr.Length;

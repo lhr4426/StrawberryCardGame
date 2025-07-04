@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ public class HiddenBoard : MonoBehaviour
 {
 
     public GameObject card;
+    public bool isHorrorMode = false;
     private void Awake()
     {
         GameManager.instance.isHardMode = true;
@@ -24,7 +26,16 @@ public class HiddenBoard : MonoBehaviour
             float x = (i % 4) * 1.4f - 2.1f;
             float y = (i / 4) * 1.4f - 4.0f;
 
-            go.transform.position = new Vector3(x, y, 0);
+
+            if (!isHorrorMode)
+            {
+                go.transform.position = Vector3.zero;
+                go.transform.DOMove(new Vector3(x, y, 0), 0.4f);
+            }
+            else
+            {
+                go.transform.position = new Vector3(x, y, 0);
+            }
             go.GetComponent<Card>().Setting(arr[i]);
         }
 

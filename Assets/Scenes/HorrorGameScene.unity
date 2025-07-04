@@ -3550,6 +3550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 5734619193922447272, guid: 196a9c881570bff4db2c7a0b5477590f, type: 3}
+  isHorrorMode: 1
 --- !u!1 &2076440199
 GameObject:
   m_ObjectHideFlags: 0

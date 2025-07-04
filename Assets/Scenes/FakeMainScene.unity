@@ -347,6 +347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curr: 0
+  tracers: []
+  isHorrorScene: 0
 --- !u!1 &500843779
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,9 +986,9 @@ MonoBehaviour:
   bestTxt: {fileID: 9001109830652877679}
   cardCount: 0
   isGameDone: 0
+  time: 0
   isHardMode: 0
   isHorrorMode: 1
-  followCursor: {fileID: 0}
 --- !u!4 &1689955313
 Transform:
   m_ObjectHideFlags: 0
@@ -1325,6 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 4399490045237026815, guid: f2fa822bec3ec2e469edd9206b86bce9, type: 3}
+  isHorrorMode: 1
 --- !u!1 &290516034687360992
 GameObject:
   m_ObjectHideFlags: 0
